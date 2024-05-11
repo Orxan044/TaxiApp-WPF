@@ -1,0 +1,27 @@
+﻿<Page x:Class="UserPanel.Views.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UserPanel.Views"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="266"
+      Title="LoginPage">
+
+    <StackPanel>
+        <TextBlock Text="Welcome , Sig-In Step" Background="Yellow"
+                       Padding="35 1 0 0" FontStyle="Oblique"  Margin="0 45 0 0"
+                       FontSize="20" Width="265" Height="30" HorizontalAlignment="Center">
+            
+        </TextBlock>
+
+        <TextBox Margin="2 20" FontSize="15"  BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="EMail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <PasswordBox Margin="2 5" BorderBrush="#C5C8CC" FontSize="15" material:HintAssist.FloatingOffset="0,-18" material:HintAssist.Hint="Password"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+
+        <Button Content="Sign in" Margin="0 15" Background="Yellow"  Foreground="Black" FontSize="18" material:ButtonAssist.CornerRadius="22" Height="45" Width="265"/>
+        <Button Content="or Sign Up" Margin="0 0 0 0" material:ButtonAssist.CornerRadius="22" FontSize="16" Height="45" Width="265" Style="{StaticResource MaterialDesignFlatButton}" 
+                Command="{Binding SignUpCommand}"/>
+
+    </StackPanel>
+</Page>

@@ -16,10 +16,12 @@
             
         </TextBlock>
 
-        <TextBox Margin="2 20" FontSize="15"  BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="EMail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-        <PasswordBox Margin="2 5" BorderBrush="#C5C8CC" FontSize="15" material:HintAssist.FloatingOffset="0,-18" material:HintAssist.Hint="Password"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+        <TextBox Text="{Binding UserInput.Mail}" Margin="2 20" FontSize="15"  BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="E-Mail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox Text="{Binding UserInput.Password}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <!--<PasswordBox Margin="2 5" BorderBrush="#C5C8CC" FontSize="15" material:HintAssist.FloatingOffset="0,-18" material:HintAssist.Hint="Password"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />-->
 
-        <Button Content="Sign in" Margin="0 15" Background="Yellow"  Foreground="Black" FontSize="18" material:ButtonAssist.CornerRadius="22" Height="45" Width="265"/>
+        <Button Content="Sign in" Margin="0 15" Background="Yellow"  Foreground="Black" FontSize="18" material:ButtonAssist.CornerRadius="22" Height="45" Width="265"
+                Command="{Binding SignInCommand}"/>
         <Button Content="or Sign Up" Margin="0 0 0 0" material:ButtonAssist.CornerRadius="22" FontSize="16" Height="45" Width="265" Style="{StaticResource MaterialDesignFlatButton}" 
                 Command="{Binding SignUpCommand}"/>
 

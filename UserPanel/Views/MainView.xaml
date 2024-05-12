@@ -17,7 +17,7 @@
             <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Image Grid.Row="1" Margin="265,0,0,0" Source="C:\Users\user\source\Repos\TaxiApp\UserPanel\Icons\StepTaxi.png" Grid.ColumnSpan="2" />
+        <Image Grid.Row="1" Margin="265,0,0,0" Source="C:\Users\Husey_so01\Source\Repos\TaxiApp-WPF\UserPanel\Icons\StepTaxi.png" Grid.ColumnSpan="2" />
         <Button Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignFloatingActionButton}" Height="15" Width="15" Background="Red"
                 Margin="5 1" Command="{Binding CloseClik}">
         </Button>

@@ -1,4 +1,5 @@
-﻿using UserPanel.Command;
+﻿using System.Windows;
+using UserPanel.Command;
 using UserPanel.Data;
 using UserPanel.Model;
 using UserPanel.Services.Navigation;
@@ -8,16 +9,30 @@ namespace UserPanel.ViewModels;
 
 public class LoginPageViewModel : ViewModel
 {
+    public User UserInput { get; set; }
+
     public AppDbContext DbContext { get; set; }
-    public User NewUser { get; set; } 
-    public RelayCommand SignUpCommand { get; set; }
 
     private readonly INavigationService NavigationService;
+    public RelayCommand SignUpCommand { get; set; }
+    public RelayCommand SignInCommand { get; set; }
+
     public LoginPageViewModel(AppDbContext appDbContext , INavigationService navigationService)
     {
+        UserInput = new();
         SignUpCommand = new RelayCommand(SigUpClick);
+        SignInCommand = new RelayCommand(SigInClick);
         DbContext = appDbContext;
         NavigationService = navigationService;
+    }
+
+    private void SigInClick(object? obj)
+    {
+        if (DbContext.GetUser(UserInput.Mail!, UserInput.Password!) is not null)
+        {
+            MessageBox.Show("SIGIN");
+        }
+        else MessageBox.Show("no sign");
     }
 
     private void SigUpClick(object? obj)

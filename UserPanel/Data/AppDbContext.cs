@@ -21,9 +21,16 @@ public class AppDbContext
         else
             Users = new();
     }
+    public User? GetUser (string userMail , string userPassword)
+    {
+        return Users.FirstOrDefault(u => u.Mail == userMail && u.Password == userPassword );
+    }
+
     public void SaveChanges()
     {
         var UserJson = JsonSerializer.Serialize(Users);
         File.WriteAllText(fileName!, UserJson);
     }
+
+
 }

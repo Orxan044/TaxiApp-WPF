@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserPanel.Views"
         mc:Ignorable="d"
-        Title="TaxiAppView" Height="450" Width="800">
-    <Grid>
+        Title="TaxiAppView" Height="450" Width="800" WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize" WindowStyle="None">
+
+    <Border CornerRadius="30" Background="#EFF2F7" >
+        <Grid>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
         
-    </Grid>
+            </Grid.ColumnDefinitions>
+        
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        
+        </Grid>
+        
+    </Border>
 </Window>

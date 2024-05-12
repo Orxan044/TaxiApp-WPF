@@ -31,6 +31,11 @@ public class LoginPageViewModel : ViewModel
         if (DbContext.GetUser(UserInput.Mail!, UserInput.Password!) is not null)
         {
             MessageBox.Show("SIGIN");
+            Application.Current.MainWindow.Close();
+
+            // Yeni pencereyi aç
+            var newWindow = new TaxiAppView();
+            newWindow.Show();
         }
         else MessageBox.Show("no sign");
     }

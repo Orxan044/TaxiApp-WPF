@@ -1,5 +1,7 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using UserPanel.ViewModels;
+using UserPanel.Views;
 
 namespace UserPanel.Services.Navigation;
 
@@ -13,5 +15,12 @@ public class NavigationService : INavigationService
             mainVm.CurrentPage = (App.MainContainer.GetInstance<TView>())!;
             mainVm.CurrentPage.DataContext = App.MainContainer.GetInstance<TViewModel>();
         }
+    }
+
+    public void NavigateWindow<TView, TViewModelWindow>() where TView : Window where TViewModelWindow : ViewModel
+    {
+        var mainView = App.MainContainer.GetInstance<TView>();
+        mainView.DataContext = App.MainContainer.GetInstance<TViewModelWindow>();
+        mainView.Show();
     }
 }

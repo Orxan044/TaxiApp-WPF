@@ -28,15 +28,16 @@ public class LoginPageViewModel : ViewModel
 
     private void SigInClick(object? obj)
     {
-        if (DbContext.GetUser(UserInput.Mail!, UserInput.Password!) is not null)
+        if (DbContext.GetUser(UserInput.Mail!, UserInput.Password!) is not null)    
         {
-            var mainWindow = App.Current.MainWindow;
-            var newWindow = new TaxiAppView();
-            newWindow.DataContext = new TaxiAppViewModel(DbContext);
-            mainWindow.Close();
-            newWindow.Show();
+            //var mainWindow = Application.Current.MainWindow;
+            //var TaxiWindow = new TaxiAppView();
+            //var TaxiAppViewModel = new TaxiAppViewModel(DbContext, NavigationService);
 
-
+            //mainWindow.Close();
+            //TaxiWindow.DataContext = TaxiAppViewModel;
+            //TaxiWindow.Show();
+            NavigationService.NavigateWindow<TaxiAppView, TaxiAppViewModel>();
         }
         else MessageBox.Show("No Sign");
     }

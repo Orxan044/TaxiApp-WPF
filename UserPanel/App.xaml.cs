@@ -10,7 +10,6 @@ namespace UserPanel;
 public partial class App : Application
 {
     public static Container MainContainer { get; set; } = new();
-
     public App()
     {
         AddOtherServices();
@@ -30,6 +29,7 @@ public partial class App : Application
         MainContainer.RegisterSingleton<LoginPageViewModel>();
         MainContainer.RegisterSingleton<RegistherPageViewModel>();
         MainContainer.RegisterSingleton<TaxiAppViewModel>();
+        MainContainer.RegisterSingleton<UserMapViewModel>();
     }
 
     private void AddViews()
@@ -38,6 +38,7 @@ public partial class App : Application
         MainContainer.RegisterSingleton<LoginPage>();
         MainContainer.RegisterSingleton<RegistherPage>();
         MainContainer.RegisterSingleton<TaxiAppView>();
+        MainContainer.RegisterSingleton<UserMapView>();
     }
 
     protected override void OnStartup(StartupEventArgs e)

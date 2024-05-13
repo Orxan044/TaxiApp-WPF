@@ -15,6 +15,7 @@ public class MainViewModel : ViewModel , INotifyPropertyChanged
     public AppDbContext DbContext { get; set; }
 
     private readonly INavigationService NavigationService;
+
     private Page currentPage;
 
     public Page CurrentPage

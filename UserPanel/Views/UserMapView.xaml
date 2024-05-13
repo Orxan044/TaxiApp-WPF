@@ -1,0 +1,14 @@
+﻿<Page x:Class="UserPanel.Views.UserMapView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UserPanel.Views"
+        xmlns:map="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="600"
+      Title="UserMapView">
+
+    <Grid>
+        <map:Map></map:Map>
+    </Grid>
+</Page>

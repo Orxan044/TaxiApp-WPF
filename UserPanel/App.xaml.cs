@@ -29,6 +29,7 @@ public partial class App : Application
         Container.RegisterSingleton<MainViewModel>();
         Container.RegisterSingleton<LoginPageViewModel>();
         Container.RegisterSingleton<RegistherPageViewModel>();
+        Container.RegisterSingleton<TaxiAppViewModel>();
     }
 
     private void AddViews()
@@ -36,6 +37,7 @@ public partial class App : Application
         Container.RegisterSingleton<MainView>();
         Container.RegisterSingleton<LoginPage>();
         Container.RegisterSingleton<RegistherPage>();
+        Container.RegisterSingleton<TaxiAppView>();
     }
 
     protected override void OnStartup(StartupEventArgs e)

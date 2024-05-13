@@ -18,8 +18,8 @@
         </Grid.ColumnDefinitions>
 
         <Image Grid.Row="1" Margin="265,0,0,0" Source="pack://application:,,,/UserPanel;component/Icons/StepTaxi.png" Grid.ColumnSpan="2" />
-        <Button Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignFloatingActionButton}" Height="15" Width="15" Background="Red"
-                Margin="5 1" Command="{Binding CloseClik}">
+        <Button Grid.Column="1" HorizontalAlignment="Right"  Width="20" Height="18" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Red" Command="{Binding CloseClik}">
+            <material:PackIcon Kind="Power" HorizontalAlignment="Center" Height="18" VerticalAlignment="Center" Width="20"/>
         </Button>
 
         <Frame Grid.Row="1" Content="{Binding CurrentPage}" Name="FrameMain" NavigationUIVisibility="Hidden" Height="432" Width="266" />

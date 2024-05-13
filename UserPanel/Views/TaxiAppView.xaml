@@ -4,24 +4,74 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserPanel.Views"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="TaxiAppView" Height="450" Width="800" WindowStartupLocation="CenterScreen" 
-        ResizeMode="NoResize" WindowStyle="None">
+        ResizeMode="NoResize" WindowStyle="None" Icon="pack://application:,,,/UserPanel;component/Icons/TaxiApp.png">
 
-    <Border CornerRadius="30" Background="#EFF2F7" >
-        <Grid>
-            <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="7*"></ColumnDefinition>
-        
-            </Grid.ColumnDefinitions>
-        
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-        
+    <Grid Background="#FFEEEEEE" >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+
+        <WrapPanel Grid.Column="1" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right">
+
+            <Button  Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Blue" HorizontalAlignment="Right"  >
+                <material:PackIcon Kind="BellOutline"/>
+            </Button>
+            <Button  x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Red" HorizontalAlignment="Right" Command="{Binding CloseWindow}">
+                <material:PackIcon Kind="Power"/>
+            </Button>
+
+        </WrapPanel>
+
+        <Grid Width="200" HorizontalAlignment="Center" Background="Yellow">
+            <material:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{material:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}" Margin="0,0,3,0">
+
+            </material:TransitioningContent>
+            <ListView x:Name="ListViewMenu" Margin="0,58,10,0" Foreground="Black" FontFamily="Champagne &amp; Limousines" FontSize="18" SelectedIndex="0">
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Início" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="FoodForkDrink" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Escolha" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="FormatListBulleted" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Cardápio" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="TruckDelivery" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Entrega" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="Cash" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="de Entrega" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="AccountStar" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Clientes" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
         </Grid>
-        
-    </Border>
+
+    </Grid>
 </Window>

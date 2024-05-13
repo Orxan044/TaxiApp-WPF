@@ -30,14 +30,12 @@ public class LoginPageViewModel : ViewModel
     {
         if (DbContext.GetUser(UserInput.Mail!, UserInput.Password!) is not null)
         {
-            MessageBox.Show("SIGIN");
-            Application.Current.MainWindow.Close();
-
-            // Yeni pencereyi aç
+            var mainWindow = App.Current.MainWindow;
             var newWindow = new TaxiAppView();
+            mainWindow.Close();
             newWindow.Show();
         }
-        else MessageBox.Show("no sign");
+        else MessageBox.Show("No Sign");
     }
 
     private void SigUpClick(object? obj)

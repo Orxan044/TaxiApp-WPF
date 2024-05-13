@@ -10,8 +10,8 @@ public class NavigationService : INavigationService
         var mainVm = App.Current.MainWindow.DataContext as MainViewModel;
         if (mainVm is not null)
         {
-            mainVm.CurrentPage = (App.Container.GetInstance<TView>())!;
-            mainVm.CurrentPage.DataContext = App.Container.GetInstance<TViewModel>();
+            mainVm.CurrentPage = (App.MainContainer.GetInstance<TView>())!;
+            mainVm.CurrentPage.DataContext = App.MainContainer.GetInstance<TViewModel>();
         }
     }
 }

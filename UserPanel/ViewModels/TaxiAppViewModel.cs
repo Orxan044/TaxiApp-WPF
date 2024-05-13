@@ -9,13 +9,12 @@ public class TaxiAppViewModel : ViewModel
     public RelayCommand CloseWindow { get; set; }
 
     public AppDbContext DbContext { get; set; }
-    public INavigationService NavigationService { get; set; }
+    //public INavigationService NavigationService { get; set; }
 
-    public TaxiAppViewModel(AppDbContext dbContext,INavigationService navigationService)
+    public TaxiAppViewModel(AppDbContext dbContext)
     {
         CloseWindow = new RelayCommand(execute: obj => App.Current.MainWindow.Close());
         DbContext = dbContext;
-        NavigationService = navigationService;
     
     }
 }

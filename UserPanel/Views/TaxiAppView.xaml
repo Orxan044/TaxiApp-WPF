@@ -36,20 +36,20 @@
             <ListView x:Name="ListViewMenu" Margin="0,58,10,0" Foreground="Black" FontFamily="Champagne &amp; Limousines" FontSize="18" SelectedIndex="0">
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
-                        <material:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Início" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                        <material:PackIcon Kind="Taxi" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Taxi" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
-                        <material:PackIcon Kind="FoodForkDrink" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Escolha" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                        <material:PackIcon Kind="History" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="History" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
                         <material:PackIcon Kind="FormatListBulleted" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Cardápio" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                        <TextBlock Text="Parmoy Cod" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60">

@@ -9,7 +9,7 @@ namespace UserPanel;
 
 public partial class App : Application
 {
-    public static Container Container { get; set; } = new();
+    public static Container MainContainer { get; set; } = new();
 
     public App()
     {
@@ -20,30 +20,30 @@ public partial class App : Application
 
     private void AddOtherServices()
     {
-        Container.RegisterSingleton<AppDbContext>();
-        Container.RegisterSingleton<INavigationService, NavigationService>();
+        MainContainer.RegisterSingleton<AppDbContext>();
+        MainContainer.RegisterSingleton<INavigationService, NavigationService>();
     }
 
     private void AddViewModels()
     {
-        Container.RegisterSingleton<MainViewModel>();
-        Container.RegisterSingleton<LoginPageViewModel>();
-        Container.RegisterSingleton<RegistherPageViewModel>();
-        Container.RegisterSingleton<TaxiAppViewModel>();
+        MainContainer.RegisterSingleton<MainViewModel>();
+        MainContainer.RegisterSingleton<LoginPageViewModel>();
+        MainContainer.RegisterSingleton<RegistherPageViewModel>();
+        MainContainer.RegisterSingleton<TaxiAppViewModel>();
     }
 
     private void AddViews()
     {
-        Container.RegisterSingleton<MainView>();
-        Container.RegisterSingleton<LoginPage>();
-        Container.RegisterSingleton<RegistherPage>();
-        Container.RegisterSingleton<TaxiAppView>();
+        MainContainer.RegisterSingleton<MainView>();
+        MainContainer.RegisterSingleton<LoginPage>();
+        MainContainer.RegisterSingleton<RegistherPage>();
+        MainContainer.RegisterSingleton<TaxiAppView>();
     }
 
     protected override void OnStartup(StartupEventArgs e)
     {
-        var mainView = Container.GetInstance<MainView>();
-        mainView.DataContext = Container.GetInstance<MainViewModel>();
+        var mainView = MainContainer.GetInstance<MainView>();
+        mainView.DataContext = MainContainer.GetInstance<MainViewModel>();
         mainView.Show();
         base.OnStartup(e);
     }

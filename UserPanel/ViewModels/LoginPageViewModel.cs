@@ -32,8 +32,11 @@ public class LoginPageViewModel : ViewModel
         {
             var mainWindow = App.Current.MainWindow;
             var newWindow = new TaxiAppView();
+            newWindow.DataContext = new TaxiAppViewModel(DbContext);
             mainWindow.Close();
             newWindow.Show();
+
+
         }
         else MessageBox.Show("No Sign");
     }

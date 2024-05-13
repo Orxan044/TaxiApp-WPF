@@ -30,8 +30,8 @@ public class MainViewModel : ViewModel , INotifyPropertyChanged
         NavigationService = navigationService;
 
         //-------------------------------------------------
-        currentPage = App.Container.GetInstance<LoginPage>();
-        currentPage.DataContext = App.Container.GetInstance<LoginPageViewModel>();
+        currentPage = App.MainContainer.GetInstance<LoginPage>();
+        currentPage.DataContext = App.MainContainer.GetInstance<LoginPageViewModel>();
         //-------------------------------------------------
     }
 

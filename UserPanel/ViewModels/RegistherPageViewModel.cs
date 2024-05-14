@@ -26,7 +26,7 @@ public class RegistherPageViewModel : ViewModel
 
     private void SigInClick(object? obj)
     {
-        NavigationService.Navigate<LoginPage, LoginPageViewModel>();
+        NavigationService.Navigate<LoginPage, LoginPageViewModel>();    
     }
     private void SignUpClick(object? obj)
     {

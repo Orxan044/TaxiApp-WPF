@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
+using System.Windows;
 using System.Windows.Controls;
 using UserPanel.Command;
 using UserPanel.Data;
@@ -28,10 +30,10 @@ public class TaxiAppViewModel : ViewModel , INotifyPropertyChanged
 
     public TaxiAppViewModel(AppDbContext dbContext,INavigationService navigationService)
     {
-        CloseWindow = new RelayCommand(execute: obj => App.Current.MainWindow.Close());
         TaxiMenu = new RelayCommand(TaxiMenuClick);
         DbContext = dbContext;
         NavigationService = new NavigationService();
+        CloseWindow = new RelayCommand(CloseClik);
 
         //-------------------------------------------------
         //currentPage = App.MainContainer.GetInstance<UserMapView>();
@@ -45,6 +47,11 @@ public class TaxiAppViewModel : ViewModel , INotifyPropertyChanged
         NavigationService.Navigate<UserMapView, UserMapViewModel>();
         //currentPage = App.MainContainer.GetInstance<UserMapView>();
         //currentPage.DataContext = App.MainContainer.GetInstance<UserMapViewModel>();
+    }
+
+    private void CloseClik(object? obj)
+    {
+        Application.Current.MainWindow.Close();
     }
 
 

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\Driver.png" />
+    <None Remove="Icons\StepTaxi.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="SimpleInjector" Version="5.4.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\Driver.png" />
+    <Resource Include="Icons\StepTaxi.png" />
+  </ItemGroup>
+
+</Project>

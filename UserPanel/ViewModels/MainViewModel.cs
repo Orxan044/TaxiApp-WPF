@@ -18,10 +18,10 @@ public class MainViewModel : ViewModel , INotifyPropertyChanged
 
     private Page currentPage;
 
-    public Page CurrentPage
+    public Page? CurrentPage
     {
         get => currentPage; 
-        set { currentPage = value; OnPropertyChanged(); }
+        set { currentPage = value!; OnPropertyChanged(); }
     }
 
     public MainViewModel(AppDbContext dbContext, INavigationService navigationService)

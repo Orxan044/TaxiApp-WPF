@@ -9,6 +9,8 @@
       Title="UserMapView">
 
     <Grid>
-        <map:Map></map:Map>
+        <map:Map 
+            CredentialsProvider="QloUgwMdduSi7dqT7FLE~YmddPthQdSBcG8dmKQP3xw~Ah_r0aHzxGQXKMjU9PmL8zCppypgnIQaYW68CPn_tHZSNvBz33WI6wTICwRwiUdn"
+             Center="40.409264,49.867092"  ZoomLevel="13"   ></map:Map>
     </Grid>
 </Page>

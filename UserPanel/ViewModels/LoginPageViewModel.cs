@@ -30,14 +30,15 @@ public class LoginPageViewModel : ViewModel
     {
         if (DbContext.GetUser(UserInput.Mail!, UserInput.Password!) is not null)    
         {
-            //var mainWindow = Application.Current.MainWindow;
-            //var TaxiWindow = new TaxiAppView();
-            //var TaxiAppViewModel = new TaxiAppViewModel(DbContext, NavigationService);
+            var mainWindow = Application.Current.MainWindow;
+            mainWindow.Close();
+            //------------------------------------------------------------------------------
+            Application.Current.MainWindow = new TaxiAppView();
+            //--------------------------------------------------------------------------------
+            var newMainWindow = Application.Current.MainWindow;
+            newMainWindow.DataContext = new TaxiAppViewModel(DbContext, NavigationService);
+            newMainWindow.Show();
 
-            //mainWindow.Close();
-            //TaxiWindow.DataContext = TaxiAppViewModel;
-            //TaxiWindow.Show();
-            NavigationService.NavigateWindow<TaxiAppView, TaxiAppViewModel>();
         }
         else MessageBox.Show("No Sign");
     }

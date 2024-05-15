@@ -35,9 +35,10 @@ public class TaxiAppViewModel : ViewModel , INotifyPropertyChanged
         NavigationService = new NavigationService();
         CloseWindow = new RelayCommand(CloseClik);
 
+
         //-------------------------------------------------
-        //currentPage = App.MainContainer.GetInstance<UserMapView>();
-        //currentPage.DataContext = App.MainContainer.GetInstance<UserMapViewModel>();
+        currentPage = App.MainContainer.GetInstance<UserMapView>();
+        currentPage.DataContext = App.MainContainer.GetInstance<UserMapViewModel>();
         //-------------------------------------------------
 
     }

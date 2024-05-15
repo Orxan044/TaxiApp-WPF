@@ -4,13 +4,58 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UserPanel.Views"
-        xmlns:map="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"      mc:Ignorable="d" 
+      xmlns:map="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"      
+      xmlns:material ="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
       d:DesignHeight="420" d:DesignWidth="600"
       Title="UserMapView">
 
     <Grid>
+        <!--<Grid>
+            <TextBox x:Name="txbSearch" HorizontalAlignment="Left" VerticalAlignment="Top"
+                     Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
+                     Width="200" Height="40" Margin="10"
+                     BorderBrush="#769DF7" Background="White" FontSize="14"
+                     material:TextFieldAssist.HasClearButton="True"
+                     material:TextFieldAssist.UnderlineCornerRadius="15">
+            <material:HintAssist.Hint>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Search driver" Padding="5 0 0 0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </material:HintAssist.Hint>
+            </TextBox>
+        </Grid>-->
+
         <map:Map 
             CredentialsProvider="QloUgwMdduSi7dqT7FLE~YmddPthQdSBcG8dmKQP3xw~Ah_r0aHzxGQXKMjU9PmL8zCppypgnIQaYW68CPn_tHZSNvBz33WI6wTICwRwiUdn"
-             Center="40.409264,49.867092"  ZoomLevel="13"   ></map:Map>
+             Center="40.409264,49.867092"  ZoomLevel="13">
+            <TextBox x:Name="txbSearch" HorizontalAlignment="Left" VerticalAlignment="Top"
+                     Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
+                     Width="200" Height="25" Margin="10"
+                     BorderBrush="#769DF7" Background="White" FontSize="14"
+                     material:TextFieldAssist.HasClearButton="True"
+                     material:TextFieldAssist.UnderlineCornerRadius="15">
+                <material:HintAssist.Hint>
+                    <StackPanel Orientation="Horizontal" Height="19">
+                        <TextBlock Text="My Adress" Padding="5 2 0 0" VerticalAlignment="Center" Height="28"/>
+                    </StackPanel>
+                </material:HintAssist.Hint>
+            </TextBox>
+            <TextBox x:Name="txbSearch_Copy" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
+                Width="200" Height="25" Margin="380,10,0,0"
+                BorderBrush="#769DF7" Background="White" FontSize="14"
+                material:TextFieldAssist.HasClearButton="True"
+                material:TextFieldAssist.UnderlineCornerRadius="15">
+                <material:HintAssist.Hint>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Going To Adress" Padding="5 1 0 0" VerticalAlignment="Center" Height="24"/>
+                    </StackPanel>
+                </material:HintAssist.Hint>
+            </TextBox>
+        </map:Map>
+
+
+
     </Grid>
 </Page>

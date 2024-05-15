@@ -26,7 +26,7 @@ public class MainViewModel : ViewModel , INotifyPropertyChanged
 
     public MainViewModel(AppDbContext dbContext, INavigationService navigationService)
     {
-        CloseClik = new RelayCommand(execute: obj => Application.Current.MainWindow.Close());
+        CloseClik = new RelayCommand(CloseWindow);
         DbContext = dbContext;
         NavigationService = navigationService;
 
@@ -36,7 +36,10 @@ public class MainViewModel : ViewModel , INotifyPropertyChanged
         //-------------------------------------------------
     }
 
-
+    private void CloseWindow(object? obj)
+    {
+        Application.Current.MainWindow.Close();
+    }
 
     //-------------------------------------------------------------
     public event PropertyChangedEventHandler? PropertyChanged;

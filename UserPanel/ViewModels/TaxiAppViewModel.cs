@@ -52,7 +52,7 @@ public class TaxiAppViewModel : ViewModel , INotifyPropertyChanged
 
     private void CloseClik(object? obj)
     {
-        Application.Current.MainWindow.Close();
+        App.Current.MainWindow.Close();
     }
 
 

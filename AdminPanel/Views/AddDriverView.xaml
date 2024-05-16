@@ -9,7 +9,7 @@
       d:DesignHeight="340" d:DesignWidth="666"
       Title="AddDriverView">
 
-    <Grid Background="White">
+    <Grid>
         <TextBlock Text="New Driver" FontSize="26" FontWeight="SemiBold" Margin="258,14,266,294" FontFamily="Sitka Heading"/>
         <Ellipse Height="200" Width="200" Margin="20,82,519,158">
             <Ellipse.Fill>
@@ -26,7 +26,7 @@
                     </Ellipse.Fill>
                 </Ellipse>
             </material:Badged>
-            <Button Width="180" FontSize="18" Content="Change Image" Margin="20,280,466,28" ></Button>
+            <Button Width="180" FontSize="18" Content="Change Image" Margin="20,280,466,28" Command="{Binding ChangeImageCommand}" ></Button>
         </Grid>
 
         <TextBox x:Name="txbSearch" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.Name}"

@@ -29,6 +29,7 @@ public partial class App : Application
         MainContainer.RegisterSingleton<DrivePageViewModel>();
         MainContainer.RegisterSingleton<DriveListViewModel>();
         MainContainer.RegisterSingleton<AddDriverViewModel>();
+        MainContainer.RegisterSingleton<DriveDetalViewModel>();
     }
 
     private void AddViews()
@@ -37,7 +38,7 @@ public partial class App : Application
         MainContainer.RegisterSingleton<DriverPageView>();
         MainContainer.RegisterSingleton<DriverListPage>();
         MainContainer.RegisterSingleton<AddDriverView>();
-
+        MainContainer.RegisterSingleton<DriveDetalView>();
     }
 
     protected override void OnStartup(StartupEventArgs e)

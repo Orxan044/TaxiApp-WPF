@@ -11,15 +11,21 @@
 
     <Grid>
         <ScrollViewer>
-            <ListView ItemsSource="{Binding DbContext.Drivers}">
+            <ListView Name="ListView" ItemsSource="{Binding DbContext.Drivers}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"></GridViewColumn>
                         <GridViewColumn Header="Surname" DisplayMemberBinding="{Binding Surname}" Width="120"></GridViewColumn>
                         <GridViewColumn Header="Car Number" DisplayMemberBinding="{Binding DriverCar.CarNumber}" Width="140"></GridViewColumn>
-                        <GridViewColumn Header="Balance" DisplayMemberBinding="{Binding Balance}" Width="110"></GridViewColumn>
                         <GridViewColumn Header="Rating" DisplayMemberBinding="{Binding Rating}"></GridViewColumn>
                         <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}"></GridViewColumn>
+                        <GridViewColumn Header="Show" Width="110">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Show" Background="#C1007B" Command="{Binding ElementName=ListView, Path=DataContext.ShowCommand}"  CommandParameter="{Binding Id}" Width="70"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

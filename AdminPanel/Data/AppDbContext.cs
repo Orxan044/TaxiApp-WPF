@@ -19,13 +19,18 @@ public class AppDbContext
             Drivers = JsonSerializer.Deserialize<ObservableCollection<Driver>>(DriverJson) ?? new();
         }
         else
-            Drivers = new();
+            Drivers = new() { new Driver() { Name = "Orxan" , Surname = "Huseynov" } };
     }
 
     public void SaveChanges()
     {
         var DriverJson = JsonSerializer.Serialize(Drivers);
         File.WriteAllText(fileName!, DriverJson);
+    }
+
+    public Driver? GetDriver(string driverId)
+    {
+        return Drivers.FirstOrDefault(p => p.Id.ToString() == driverId);
     }
 }
 

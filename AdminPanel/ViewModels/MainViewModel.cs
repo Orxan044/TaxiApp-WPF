@@ -32,6 +32,7 @@ public class MainViewModel : ViewModel , INotifyPropertyChanged
 
         DbContext = dbContext;
         NavigationService = navigationService;
+
         //-------------------------------------------------
         //currentPage = App.MainContainer.GetInstance<DriverPageView>();
         //currentPage.DataContext = App.MainContainer.GetInstance<DrivePageViewModel>();

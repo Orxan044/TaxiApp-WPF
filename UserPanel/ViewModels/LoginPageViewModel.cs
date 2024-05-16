@@ -30,12 +30,13 @@ public class LoginPageViewModel : ViewModel
     {
         if (DbContext.GetUser(UserInput.Mail!, UserInput.Password!) is not null)    
         {
-            var mainWindow = Application.Current.MainWindow;
+            var mainWindow = App.Current.MainWindow;
             mainWindow.Close();
+            Thread.Sleep(300);
             //------------------------------------------------------------------------------
-            Application.Current.MainWindow = new TaxiAppView();
+            App.Current.MainWindow = new TaxiAppView();
             //--------------------------------------------------------------------------------
-            var newMainWindow = Application.Current.MainWindow;
+            var newMainWindow = App.Current.MainWindow;
             newMainWindow.DataContext = new TaxiAppViewModel(DbContext, NavigationService);
             newMainWindow.Show();
 

@@ -26,9 +26,9 @@ public class MainViewModel : ViewModel , INotifyPropertyChanged
 
     public MainViewModel(AppDbContext dbContext, INavigationService navigationService)
     {
-        CloseClik = new RelayCommand(CloseWindow);
         DbContext = dbContext;
         NavigationService = navigationService;
+        CloseClik = new RelayCommand(CloseWindow);
 
         //-------------------------------------------------
         currentPage = App.MainContainer.GetInstance<LoginPage>();
@@ -38,7 +38,7 @@ public class MainViewModel : ViewModel , INotifyPropertyChanged
 
     private void CloseWindow(object? obj)
     {
-        Application.Current.MainWindow.Close();
+        App.Current.MainWindow.Close();      
     }
 
     //-------------------------------------------------------------

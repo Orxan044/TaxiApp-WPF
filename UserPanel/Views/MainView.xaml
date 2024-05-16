@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:UserPanel.Views"
         xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" Icon="pack://application:,,,/UserPanel;component/Icons/StepTaxi.png"
-        Title="MainView" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+        Title="Step Taxi" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="18" ></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height='20*'></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="*"></ColumnDefinition>
@@ -19,7 +19,7 @@
 
         <Image Grid.Row="1" Margin="265,0,0,0" Source="pack://application:,,,/UserPanel;component/Icons/StepTaxi.png" Grid.ColumnSpan="2" />
         <Button Grid.Column="1" HorizontalAlignment="Right"  Width="20" Height="18" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Red" Command="{Binding CloseClik}">
-            <material:PackIcon Kind="Power" HorizontalAlignment="Center" Height="18" VerticalAlignment="Center" Width="20"/>
+            <material:PackIcon Kind="Power" HorizontalAlignment="Center" Height="21" VerticalAlignment="Center" Width="20"/>
         </Button>
 
         <Frame Grid.Row="1" Content="{Binding CurrentPage}" Name="FrameMain" NavigationUIVisibility="Hidden" Height="432" Width="266" />

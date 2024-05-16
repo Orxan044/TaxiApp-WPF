@@ -9,7 +9,7 @@
       d:DesignHeight="410" d:DesignWidth="666"
       Title="DriverPageView">
 
-    <Grid Background="White">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="5*"></RowDefinition>

@@ -94,7 +94,7 @@
 
 
 
-        <Frame Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden" Margin="1,29,0,0" Grid.Column="1" />
+        <Frame Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden"  Width="666.666" Height="420" VerticalAlignment="Bottom" Grid.Column="1" />
 
 
     </Grid>

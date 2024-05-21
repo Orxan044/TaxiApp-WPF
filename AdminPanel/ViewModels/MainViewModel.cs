@@ -1,5 +1,6 @@
 ﻿using AdminPanel.Command;
 using AdminPanel.Data;
+using AdminPanel.Models;
 using AdminPanel.Services.Navigation;
 using AdminPanel.Views;
 using System.ComponentModel;
@@ -34,11 +35,10 @@ public class MainViewModel : ViewModel , INotifyPropertyChanged
         NavigationService = navigationService;
 
         //-------------------------------------------------
-        //currentPage = App.MainContainer.GetInstance<DriverPageView>();
-        //currentPage.DataContext = App.MainContainer.GetInstance<DrivePageViewModel>();
+        currentPage = App.MainContainer.GetInstance<DriverPageView>();
+        currentPage.DataContext = App.MainContainer.GetInstance<DrivePageViewModel>();
         //-------------------------------------------------
     }
-
 
 
 

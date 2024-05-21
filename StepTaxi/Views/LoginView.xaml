@@ -1,0 +1,32 @@
+﻿<Page x:Class="StepTaxi.Views.LoginView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StepTaxi.Views"
+      xmlns:material ="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="266.666"
+      Title="LoginView">
+
+    <Grid Background="White">
+        <StackPanel>
+            <TextBlock Text="Welcome , Sig-In Step" Background="Yellow"
+                       Padding="35 1 0 0"   Margin="0 45 0 0"
+                       FontSize="20" Width="265" Height="30" HorizontalAlignment="Center">
+
+            </TextBlock>
+
+            <TextBox Text="{Binding UserLogin.Mail}" Margin="2 20" FontSize="15"  BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="E-Mail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox Text="{Binding UserLogin.Password}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <!--<PasswordBox Margin="2 5" BorderBrush="#--><!--C5C8CC" FontSize="15" material:HintAssist.FloatingOffset="0,-18" material:HintAssist.Hint="Password"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />-->
+
+            <Button Content="Sign in" Margin="0 15" Background="Yellow"  Foreground="Black" FontSize="18" material:ButtonAssist.CornerRadius="22" Height="45" Width="265"
+                Command="{Binding SignInCommand}"/>
+            <Button Content="or Sign Up" Margin="0 0 0 0" material:ButtonAssist.CornerRadius="22" FontSize="16" Height="45" Width="265" Style="{StaticResource MaterialDesignFlatButton}" 
+                Command="{Binding SignUpCommand}"/>
+
+        </StackPanel>
+
+    </Grid>
+</Page>

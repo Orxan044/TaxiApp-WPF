@@ -1,0 +1,34 @@
+﻿<Page x:Class="StepTaxi.Views.RegistherView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StepTaxi.Views"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"     
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="266.66"
+      Title="RegistherView" >
+
+    <StackPanel>
+        <TextBlock Text="Welcome , Sig-Up Step" Background="Yellow"
+                       Padding="35 1 0 0" FontStyle="Oblique" Margin="0 0 0 5"
+                       FontSize="20" Width="265" Height="30" VerticalAlignment="Top">
+
+        </TextBlock>
+        <TextBox Text="{Binding NewUser.FirstName}"  Margin="2 5" FontSize="15" BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="First Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox Text="{Binding NewUser.LastName}" Margin="2 10" FontSize="15" BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="Last Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox Text="{Binding NewUser.PhoneNumber}" Margin="2 0" FontSize="15" BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="Phone Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBlock Margin="5 0" FontSize="10" Foreground="Gray" >Eg 050-573-8147</TextBlock>
+        <TextBox Text="{Binding NewUser.Password}" Margin="2 5" FontSize="15" BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="New Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <!--<PasswordBox  Margin="2 5" BorderBrush="#C5C8CC" FontSize="15" material:HintAssist.FloatingOffset="0,-18" material:HintAssist.Hint="New password"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox }" />-->
+        <StackPanel Orientation="Horizontal" >
+            <TextBox Text="{Binding NewUser.Mail}"  FontSize="15" Margin="0 0 0 10"  BorderBrush="#C5C8CC" material:HintAssist.FloatingOffset="0,-20" material:HintAssist.Hint="E-Mail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="159" />
+            <Button Content="Send Code" Margin="7" Foreground="Black" FontSize="13" Width="100"/>
+
+        </StackPanel>
+        <Button Content="Sign Up" Margin="0 10"  Background="Yellow"  Foreground="Black" FontSize="18" material:ButtonAssist.CornerRadius="22" Height="45" Width="264"
+                Command="{Binding SignUpCommand}"/>
+        <Button Content="or Sign In" material:ButtonAssist.CornerRadius="22" FontSize="16" Height="45" Width="265" Style="{StaticResource MaterialDesignFlatButton}" 
+                Command="{Binding SignInCommand}"/>
+    </StackPanel>
+</Page>

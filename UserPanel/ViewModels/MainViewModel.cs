@@ -38,7 +38,8 @@ public class MainViewModel : ViewModel , INotifyPropertyChanged
 
     private void CloseWindow(object? obj)
     {
-        App.Current.MainWindow.Close();      
+        App.Current.MainWindow.Close();
+        Environment.Exit(0);
     }
 
     //-------------------------------------------------------------

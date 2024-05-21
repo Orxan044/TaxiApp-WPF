@@ -26,26 +26,26 @@ public class LoginPageViewModel : ViewModel
         NavigationService = navigationService;
     }
 
-    private void SigInClick(object? obj)
-    {
-        if (DbContext.GetUser(UserInput.Mail!, UserInput.Password!) is not null)    
+        private void SigInClick(object? obj)
         {
-            var mainWindow = App.Current.MainWindow;
-            mainWindow.Close();
-            Thread.Sleep(300);
-            //------------------------------------------------------------------------------
-            App.Current.MainWindow = new TaxiAppView();
-            //--------------------------------------------------------------------------------
-            var newMainWindow = App.Current.MainWindow;
-            newMainWindow.DataContext = new TaxiAppViewModel(DbContext, NavigationService);
-            newMainWindow.Show();
-
+            if (DbContext.GetUser(UserInput.Mail!, UserInput.Password!) is not null)    
+            {
+                var mainWindow = App.Current.MainWindow;
+                mainWindow.Close();
+                Thread.Sleep(300);
+                //------------------------------------------------------------------------------
+                App.Current.MainWindow = new TaxiAppView();
+                //--------------------------------------------------------------------------------
+                var newMainWindow = App.Current.MainWindow;
+                newMainWindow.DataContext = new TaxiAppViewModel(DbContext, NavigationService);
+                newMainWindow.Show();
+               
         }
-        else MessageBox.Show("No Sign");
-    }
+            else MessageBox.Show("No Sign");
+        }
 
-    private void SigUpClick(object? obj)
-    {
-        NavigationService.Navigate<RegistherPage, RegistherPageViewModel>();
-    }
+        private void SigUpClick(object? obj)
+        {
+            NavigationService.Navigate<RegistherPage, RegistherPageViewModel>();
+        }
 }

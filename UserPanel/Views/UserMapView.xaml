@@ -6,40 +6,62 @@
       xmlns:local="clr-namespace:UserPanel.Views"
       xmlns:map="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"      
       xmlns:material ="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:maps="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
       mc:Ignorable="d" 
-      d:DesignHeight="420" d:DesignWidth="600"
+      d:DesignHeight="420" d:DesignWidth="666.666"
       Title="UserMapView">
 
     <Grid>
 
-        <map:Map 
+        <map:Map  Center="{Binding UserLocation}" ZoomLevel="10"
             CredentialsProvider="QloUgwMdduSi7dqT7FLE~YmddPthQdSBcG8dmKQP3xw~Ah_r0aHzxGQXKMjU9PmL8zCppypgnIQaYW68CPn_tHZSNvBz33WI6wTICwRwiUdn"
-             Center="40.409264,49.867092"  ZoomLevel="13">
-            <TextBox x:Name="txbSearch" HorizontalAlignment="Left" VerticalAlignment="Top"
+             >
+            <Grid Height="70" VerticalAlignment="Top" Background="Gray">
+
+                <TextBlock Text="My Adress" FontSize="22" FontWeight="SemiBold"  FontFamily="Sitka Heading" Margin="47,1,424,45"/>
+                <TextBox  HorizontalAlignment="Left" VerticalAlignment="Top"
                      Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
-                     Width="200" Height="35" Margin="10"
+                     Width="200" Height="34" Margin="6,30,0,0"
                      BorderBrush="#769DF7" Background="White" FontSize="14"
                      material:TextFieldAssist.HasClearButton="True"
                      material:TextFieldAssist.UnderlineCornerRadius="15">
-                <material:HintAssist.Hint>
-                    <StackPanel Orientation="Horizontal" Height="19">
-                        <TextBlock Text="My Adress" Padding="5 2 0 0" VerticalAlignment="Center" Height="28"/>
-                    </StackPanel>
-                </material:HintAssist.Hint>
-            </TextBox>
-            <TextBox x:Name="txbSearch_Copy" HorizontalAlignment="Left" VerticalAlignment="Top"
-                Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
-                Width="200" Height="35" Margin="398,10,0,0"
-                BorderBrush="#769DF7" Background="White" FontSize="14"
-                material:TextFieldAssist.HasClearButton="True"
-                material:TextFieldAssist.UnderlineCornerRadius="15">
-                <material:HintAssist.Hint>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Going To Adress" Padding="5 1 0 0" VerticalAlignment="Center" Height="24"/>
-                    </StackPanel>
-                </material:HintAssist.Hint>
-            </TextBox>
+                    <material:HintAssist.Hint>
+                        <StackPanel Orientation="Horizontal" Height="19">
+                            <TextBlock Text="My Adress" Padding="5 2 0 0" VerticalAlignment="Center" Height="28"/>
+                        </StackPanel>
+                    </material:HintAssist.Hint>
+                </TextBox>
+                <TextBlock Text="Go To Adress" FontSize="22" FontWeight="SemiBold"  FontFamily="Sitka Heading" Margin="288,1,184,45"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
+                    Width="200" Height="34" Margin="250,30,0,0"
+                    BorderBrush="#769DF7" Background="White" FontSize="14"
+                    material:TextFieldAssist.HasClearButton="True"
+                    material:TextFieldAssist.UnderlineCornerRadius="15">
+                    <material:HintAssist.Hint>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Go To Adress" Padding="5 1 0 0" VerticalAlignment="Center" Height="24"/>
+                        </StackPanel>
+                    </material:HintAssist.Hint>
+                </TextBox>
+
+                <Button Content="Goo" FontSize="22" Padding="0 0 0 5"  Height="30" Width="130" Margin="460,32,10,8" ></Button>
+
+            </Grid>
+
+            <Button Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Black" Margin="618,105,0,283" Command="{Binding CloseClik}">
+                <material:PackIcon Kind="Information" Height="32" Width="40" VerticalAlignment="Center" />
+            </Button>
+            <Button Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Black" Margin="617,151,0,237" Command="{Binding CloseClik}">
+                <material:PackIcon Kind="CrosshairsGps" Height="32" Width="40" VerticalAlignment="Center" />
+            </Button>
+
+            
+
         </map:Map>
+
+        
+
 
 
 

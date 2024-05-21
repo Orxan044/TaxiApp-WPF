@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UserPanel.Views
+namespace StepTaxi.Views
 {
     /// <summary>
-    /// Interaction logic for UserMapView.xaml
+    /// Interaction logic for StepTaxiMainView.xaml
     /// </summary>
-    public partial class UserMapView : Page
+    public partial class StepTaxiMainView : Page
     {
-        public UserMapView()
+        public StepTaxiMainView()
         {
             InitializeComponent();
         }
-
     }
 }

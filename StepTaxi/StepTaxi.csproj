@@ -15,8 +15,6 @@
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
-    <PackageReference Include="Microsoft.Maps.MapControl.WPF" Version="1.0.0.3" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="SimpleInjector" Version="5.4.5" />
   </ItemGroup>
 

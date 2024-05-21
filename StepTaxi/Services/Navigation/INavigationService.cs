@@ -1,8 +1,7 @@
-﻿using System.Windows;
+﻿using StepTaxi.ViewModels;
 using System.Windows.Controls;
-using UserPanel.ViewModels;
 
-namespace UserPanel.Services.Navigation;
+namespace StepTaxi.Services.Navigation;
 
 public interface INavigationService
 {

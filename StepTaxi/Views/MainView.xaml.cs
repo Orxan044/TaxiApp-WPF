@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UserPanel.Views
+namespace StepTaxi.Views
 {
     /// <summary>
-    /// Interaction logic for UserMapView.xaml
+    /// Interaction logic for MainView.xaml
     /// </summary>
-    public partial class UserMapView : Page
+    public partial class MainView : Window
     {
-        public UserMapView()
+        public MainView()
         {
             InitializeComponent();
         }
-
     }
 }

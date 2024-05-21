@@ -10,6 +10,12 @@
       Title="AddDriverView">
 
     <Grid>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Height="38"
+                Background="{x:Null}" BorderBrush="{x:Null}"
+                Padding="0" Foreground="Black" 
+                Command="{Binding BackToPageCommand}">
+            <material:PackIcon Kind="ArrowBack" HorizontalAlignment="Center" Height="38" VerticalAlignment="Center" Width="30"/>
+        </Button>
         <TextBlock Text="New Driver" FontSize="26" FontWeight="SemiBold" Margin="258,14,266,294" FontFamily="Sitka Heading"/>
         <Ellipse Height="200" Width="200" Margin="20,82,519,158">
             <Ellipse.Fill>
@@ -17,19 +23,20 @@
             </Ellipse.Fill>
         </Ellipse>
 
-        <Grid>
+        <Grid Margin="0,-2,0,2">
             <material:Badged Badge="{material:PackIcon Kind=Pen}" 
-                  VerticalAlignment="Center"  BadgeBackground="LightGreen" Margin="20,15">
-                <Ellipse Height="180" Width="180">
+                  VerticalAlignment="Center"  BadgeBackground="LightGreen" Margin="10">
+                <Ellipse Height="200" Width="200">
                     <Ellipse.Fill>
                         <ImageBrush  ImageSource="{Binding NewDriver.Image}"/>
                     </Ellipse.Fill>
                 </Ellipse>
             </material:Badged>
-            <Button Width="180" FontSize="18" Content="Change Image" Margin="20,280,466,28" Command="{Binding ChangeImageCommand}" ></Button>
+
+            <Button Width="180" FontSize="18" Content="Change Image" Margin="20,280,466,20" Command="{Binding ChangeImageCommand}" ></Button>
         </Grid>
 
-        <TextBox x:Name="txbSearch" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.Name}"
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.Name}"
                      Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
                      Width="200" Height="40" Margin="227,89,0,0"
                      BorderBrush="#769DF7" Background="White" FontSize="14"
@@ -42,7 +49,7 @@
             </material:HintAssist.Hint>
         </TextBox>
 
-        <TextBox x:Name="txbSearch_Copy" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.Surname}"
+        <TextBox  HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.Surname}"
             Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
             Width="200" Height="40"
             BorderBrush="#769DF7" Background="White" FontSize="14"
@@ -55,9 +62,22 @@
             </material:HintAssist.Hint>
         </TextBox>
 
-        <TextBox x:Name="txbSearch_Copy1" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.DriverCar.CarModel}"
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.PhoneNumber}"
             Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
-            Width="200" Height="40" Margin="226,160,0,0"
+            Width="200" Height="40"
+            BorderBrush="#769DF7" Background="White" FontSize="14"
+            material:TextFieldAssist.HasClearButton="True"
+            material:TextFieldAssist.UnderlineCornerRadius="15" Margin="227,152,0,0">
+            <material:HintAssist.Hint>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Driver Phone Number" Padding="5 0 0 0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </material:HintAssist.Hint>
+        </TextBox>
+        
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.DriverCar.CarModel}"
+            Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
+            Width="200" Height="40" Margin="444,152,0,0"
             BorderBrush="#769DF7" Background="White" FontSize="14"
             material:TextFieldAssist.HasClearButton="True"
             material:TextFieldAssist.UnderlineCornerRadius="15">
@@ -68,12 +88,12 @@
             </material:HintAssist.Hint>
         </TextBox>
 
-        <TextBox x:Name="txbSearch_Copy2" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.DriverCar.CarColor}"
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.DriverCar.CarColor}"
             Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
             Width="200" Height="40"
             BorderBrush="#769DF7" Background="White" FontSize="14"
             material:TextFieldAssist.HasClearButton="True"
-            material:TextFieldAssist.UnderlineCornerRadius="15" Margin="444,160,0,0">
+            material:TextFieldAssist.UnderlineCornerRadius="15" Margin="444,214,0,0">
             <material:HintAssist.Hint>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Car Color" Padding="5 0 0 0" VerticalAlignment="Center"/>
@@ -81,9 +101,9 @@
             </material:HintAssist.Hint>
         </TextBox>
 
-        <TextBox x:Name="txbSearch_Copy3" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.DriverCar.CarYear}"
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.DriverCar.CarYear}"
             Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
-            Width="200" Height="40" Margin="226,226,0,0"
+            Width="200" Height="40" Margin="226,214,0,0"
             BorderBrush="#769DF7" Background="White" FontSize="14"
             material:TextFieldAssist.HasClearButton="True"
             material:TextFieldAssist.UnderlineCornerRadius="15">
@@ -94,12 +114,12 @@
             </material:HintAssist.Hint>
         </TextBox>
 
-        <TextBox x:Name="txbSearch_Copy4" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.DriverCar.CarNumber}"
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding NewDriver.DriverCar.CarNumber}"
             Style="{StaticResource MaterialDesignTextBoxBase}" VerticalContentAlignment="Center"
             Width="200" Height="40"
             BorderBrush="#769DF7" Background="White" FontSize="14"
             material:TextFieldAssist.HasClearButton="True"
-            material:TextFieldAssist.UnderlineCornerRadius="15" Margin="444,226,0,0">
+            material:TextFieldAssist.UnderlineCornerRadius="15" Margin="225,276,0,0">
             <material:HintAssist.Hint>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Car Number" Padding="5 0 0 0" VerticalAlignment="Center"/>
@@ -107,7 +127,7 @@
             </material:HintAssist.Hint>
         </TextBox>
 
-        <Button Background="Yellow" FontSize="18" Content="Add Driver" Margin="298,289,112,19" Command="{Binding AddDriverCommand}" />
+        <Button Background="Yellow" BorderBrush="Yellow" FontSize="18" Content="Add Driver" Margin="444,259,22,41" Width="200" Height="40" Command="{Binding AddDriverCommand}" />
 
     </Grid>
 </Page>

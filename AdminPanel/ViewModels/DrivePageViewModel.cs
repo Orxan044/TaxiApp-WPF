@@ -1,7 +1,9 @@
 ﻿using AdminPanel.Command;
 using AdminPanel.Data;
+using AdminPanel.Models;
 using AdminPanel.Services.Navigation;
 using AdminPanel.Views;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;

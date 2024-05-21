@@ -9,15 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="JsonData\**" />
+    <EmbeddedResource Remove="JsonData\**" />
+    <None Remove="JsonData\**" />
+    <Page Remove="JsonData\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Icons\Driver.png" />
     <None Remove="Icons\StepTaxi.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Expression.Interaction" Version="3.0.40218" />
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Notifier" Version="1.0.2" />
     <PackageReference Include="SimpleInjector" Version="5.4.5" />
-    <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
+    <PackageReference Include="ToastNotifications" Version="2.5.1" />
+    <PackageReference Include="ToastNotifications.Messages" Version="2.5.1" />
   </ItemGroup>
 
   <ItemGroup>

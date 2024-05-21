@@ -46,13 +46,12 @@ public class TaxiAppViewModel : ViewModel , INotifyPropertyChanged
     private void TaxiMenuClick(object? obj)
     {
         NavigationService.Navigate<UserMapView, UserMapViewModel>();
-        //currentPage = App.MainContainer.GetInstance<UserMapView>();
-        //currentPage.DataContext = App.MainContainer.GetInstance<UserMapViewModel>();
     }
 
     private void CloseClik(object? obj)
     {
         App.Current.MainWindow.Close();
+        Environment.Exit(0);
     }
 
 

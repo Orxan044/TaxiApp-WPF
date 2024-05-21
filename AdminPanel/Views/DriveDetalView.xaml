@@ -6,22 +6,18 @@
       xmlns:local="clr-namespace:AdminPanel.Views"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="340" d:DesignWidth="666"
+      d:DesignHeight="410" d:DesignWidth="666"
       Title="DriveDetalView">
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="37*"></ColumnDefinition>
+            <ColumnDefinition Width="45*"></ColumnDefinition>
+            <ColumnDefinition Width="29*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Margin="10" Grid.Column="0">
-            <Ellipse Height="80" Width="80">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="{Binding Driver.Image}"/>
-                </Ellipse.Fill>
-            </Ellipse>
+        <StackPanel Margin="5,5,5,5" Grid.Column="0">
+            <TextBlock Text="Driver Detalis" Margin="20 5" FontSize="26" FontWeight="SemiBold" FontFamily="Sitka Heading"/>
             <TextBox Text="{Binding Driver.Name}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" 
                      material:HintAssist.FloatingOffset="0,-20" 
                      material:HintAssist.Hint="Name" 
@@ -30,11 +26,66 @@
                      material:HintAssist.FloatingOffset="0,-20" 
                      material:HintAssist.Hint="Surname" 
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox Text="{Binding Driver.PhoneNumber}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" 
+                     material:HintAssist.FloatingOffset="0,-20"
+                     material:HintAssist.Hint="Phone Number"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <!--<TextBox Text="{Binding Driver.Rating}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" 
+                     material:HintAssist.FloatingOffset="0,-20" 
+                     material:HintAssist.Hint="Rating" IsReadOnly="True"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />-->
+            <TextBox Text="{Binding Driver.Balance}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" 
+                     material:HintAssist.FloatingOffset="0,-20" 
+                     material:HintAssist.Hint="Balance"  IsReadOnly="True"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox Text="{Binding Driver.RountCount}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" 
+                     material:HintAssist.FloatingOffset="0,-20" 
+                     material:HintAssist.Hint="Rount Count"  IsReadOnly="True"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+
         </StackPanel>
-    
-    
-    
+
+        <StackPanel Grid.Column="1" Margin="25,5,5,5">
+            <TextBlock Text="Car Detalis" Margin="20 5" FontSize="26" FontWeight="SemiBold" FontFamily="Sitka Heading"/>
+            <TextBox Text="{Binding Driver.DriverCar.CarModel}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" 
+                     material:HintAssist.FloatingOffset="0,-20" 
+                     material:HintAssist.Hint="Car Model" 
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox Text="{Binding Driver.DriverCar.CarColor}" FontSize="15"  BorderBrush="#C5C8CC" 
+                 material:HintAssist.FloatingOffset="0,-20"
+                 material:HintAssist.Hint="Car Color" Margin="2 5"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox Text="{Binding Driver.DriverCar.CarYear}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" 
+                     material:HintAssist.FloatingOffset="0,-20" 
+                     material:HintAssist.Hint="Car Year" 
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox Text="{Binding Driver.DriverCar.CarNumber}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" 
+                     material:HintAssist.FloatingOffset="0,-20" 
+                     material:HintAssist.Hint="Car Number" 
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox Text="{Binding Driver.DriverCar.DriverCarLevel}" Margin="2 5" FontSize="15"  BorderBrush="#C5C8CC" 
+                     material:HintAssist.FloatingOffset="0,-20"
+                     material:HintAssist.Hint="Car Level" IsReadOnly="True"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+        </StackPanel>
+
+        <StackPanel Margin="5"  Grid.Column="2">
+            <Ellipse Height="100" Width="100" Margin="0 5">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="{Binding Driver.Image}"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Button Margin="0 5"  FontSize="18" Content="Change Image" Command="{Binding ChangeImageCommand}" ></Button>
+            <Button Content="Remove Driver" Margin="0 5" FontSize="18" Background="Red" BorderBrush="Red" Height="50" Command="{Binding RemoveDriverCommand}"></Button>
+            <Button Content="Updated Driver" Margin="0 5" FontSize="18" Background="Yellow" BorderBrush="Yellow"  Height="50" Command="{Binding UpdatedDriverCommand}"></Button>
+            <Button Content="Back" Margin="0 5" FontSize="18" Foreground="White" Background="Black" BorderBrush="Black"  Height="50" Command="{Binding BackToPageCommand}"/>
+        </StackPanel>
+
+
+
     </Grid>
-    
-    
+
+
 </Page>

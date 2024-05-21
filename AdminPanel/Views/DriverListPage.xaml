@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:AdminPanel.Views"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="340" d:DesignWidth="666"
+      d:DesignHeight="410" d:DesignWidth="666"
       Title="DriverListPage">
 
     <Grid>
@@ -22,7 +22,7 @@
                         <GridViewColumn Header="Show" Width="110">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Show" Background="#C1007B" Command="{Binding ElementName=ListView, Path=DataContext.ShowCommand}"  CommandParameter="{Binding Id}" Width="70"/>
+                                    <Button Content="Show"  Command="{Binding ElementName=ListView, Path=DataContext.ShowCommand}"  CommandParameter="{Binding Id}" Width="70"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
